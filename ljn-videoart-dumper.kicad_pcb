@@ -50,7 +50,7 @@
     (aux_axis_origin 100 100)
     (grid_origin 100 100)
     (pcbplotparams
-      (layerselection 0x0000030_80000001)
+      (layerselection 0x0000030_ffffffff)
       (plot_on_all_layers_selection 0x0000000_00000000)
       (disableapertmacros false)
       (usegerberextensions false)
@@ -79,9 +79,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "")
+      (outputdirectory "ljn-dumper-v1")
     )
   )
 

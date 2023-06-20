@@ -15,13 +15,13 @@ const uint8_t PIN_DATA_LATCH = 3;
 const uint8_t PIN_DATA_DATA = 2; // Q7
 
 // 74HCT595s to set address bus on cartridge
-const uint8_t PIN_ADDRESS_SHIFT_CLK = 12; // SRCLK
-const uint8_t PIN_ADDRESS_LATCH = 8; // RCLK
+const uint8_t PIN_ADDRESS_STORAGE_CLK = 12; // SRCLK
+const uint8_t PIN_ADDRESS_SHIFT_CLK = 8; // RCLK
 const uint8_t PIN_ADDRESS_DATA = 11; // SERial data
 
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(38400);
   Serial.println("LJN VideoArt ROM Dumper");
 
   // TODO: Set pins
@@ -33,37 +33,38 @@ void setup() {
   pinMode(PIN_DATA_CLOCK, OUTPUT);
 
   pinMode(PIN_ADDRESS_SHIFT_CLK, OUTPUT);
-  pinMode(PIN_ADDRESS_LATCH, OUTPUT);
+  pinMode(PIN_ADDRESS_STORAGE_CLK, OUTPUT);
   pinMode(PIN_ADDRESS_DATA, OUTPUT);
 }
 
 void setOutputEnable(bool isEnabled) {
-  // TODO: Check if this is active low or not. Assuming low since ROM
-  digitalWrite(PIN_ROM_OE, isEnabled ? HIGH : LOW);
+  // Assuming active low
+  digitalWrite(PIN_ROM_OE, isEnabled ? LOW : HIGH);
 }
 
 void assertAddressBus(uint16_t address) {
-  digitalWrite(PIN_ADDRESS_LATCH, LOW);
+  digitalWrite(PIN_ADDRESS_STORAGE_CLK, LOW);
   shiftOut(PIN_ADDRESS_DATA, PIN_ADDRESS_SHIFT_CLK, MSBFIRST, address);
-  digitalWrite(PIN_ADDRESS_LATCH, HIGH);
+  digitalWrite(PIN_ADDRESS_STORAGE_CLK, HIGH);
 }
 
 uint8_t clockOutData() {
   // Read the data on the data bus, assuming that
   // the output enable is already prepared
-  digitalWrite(PIN_DATA_LATCH, LOW);
+  digitalWrite(PIN_DATA_LATCH, LOW); // load into shift register
 
+  // Read out the data from the shift register
   // Not sure if MSBFIRST or LSBFIRST should be used here, d7 is tied to d7...
   uint8_t result = shiftIn(PIN_DATA_DATA, PIN_DATA_CLOCK, MSBFIRST);
 
-  digitalWrite(PIN_DATA_LATCH, HIGH);
+  digitalWrite(PIN_DATA_LATCH, HIGH); // stop loading into shift register
 
   return result;
 }
 
 void dumpCartridgeToSerial() {
   uint16_t address = 0;
-  while(address < ROM_LENGTH) {
+  while(address < ROM_LENGTH ) {
     assertAddressBus(address);
     setOutputEnable(true); // enabled
 
@@ -85,6 +86,8 @@ void loop() {
     commandLine = Serial.readStringUntil('\n');
     if(commandLine.equalsIgnoreCase("dump")) {
       dumpCartridgeToSerial();
+      Serial.println("");
+      Serial.println("done.");
     }
     else if(commandLine.equalsIgnoreCase("info")) {
       Serial.println("Version 1");

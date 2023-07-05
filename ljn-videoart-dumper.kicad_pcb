@@ -583,7 +583,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp bbaa6403-f338-405e-9977-ce56f8736cd0)
     )
-    (fp_text value "0Ω" (at 5.08 2.37) (layer "F.Fab")
+    (fp_text value "0Ω" (at 5.08 2.37) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e432034f-d677-4693-898c-43207ee27454)
     )

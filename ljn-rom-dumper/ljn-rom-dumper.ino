@@ -93,8 +93,8 @@ void dumpCartridgeToSerial() {
     assertAddressBus(address);
     setOutputEnable(true); // enabled
 
-    uint8_t byte = clockOutData();
-    Serial.print(byte, HEX);
+    byte result = clockOutData();
+    Serial.print(result, HEX);
     Serial.print(' ');
 
     setOutputEnable(false); // disabled

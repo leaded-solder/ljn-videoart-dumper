@@ -89,7 +89,7 @@ uint8_t clockOutData() {
 
 void dumpCartridgeToSerial() {
   uint16_t address = 0;
-  while(address < 32 /*ROM_LENGTH*/ ) { // just for now
+  while(address < 32 /*ROM_LENGTH*/ ) { // HACK just for now
     assertAddressBus(address);
     setOutputEnable(true); // enabled
 

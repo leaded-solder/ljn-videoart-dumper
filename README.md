@@ -9,6 +9,8 @@ This device was developed as part of [a Leaded Solder blog](https://www.leadedso
 So far, very few games have been dumped.
  - Disney Story Book (unverified)
 
+If you have more cartridges that can be dumped (or even better, a Video Art system whose BIOS ROM can be desoldered and dumped!) please get in touch.
+
 ## Hardware
 ### Requirements
 You will need:

@@ -3,4 +3,4 @@
 *.zip
 *backup*
 ljn-dumper-v*
-rom.bin
+rom*.bin

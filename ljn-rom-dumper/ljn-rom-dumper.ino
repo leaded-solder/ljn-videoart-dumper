@@ -79,12 +79,10 @@ uint8_t clockOutData() {
   // Read the data on the data bus, assuming that
   // the output enable is already prepared
   digitalWrite(PIN_DATA_LATCH, LOW);  // load into shift register
-  delayMicroseconds(20);
+  delayMicroseconds(50);
   digitalWrite(PIN_DATA_LATCH, HIGH);  // stop loading into shift register
 
   // Read out the data from the shift register
-  // Not sure if MSBFIRST or LSBFIRST should be used here, d7 is tied to d7...
-  // it does seem to fetch data...
   uint8_t result = shiftIn165(PIN_DATA_DATA, PIN_DATA_CLOCK, MSBFIRST);
 
   return result;

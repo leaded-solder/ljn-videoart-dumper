@@ -50,3 +50,15 @@ Open the `interpreter.py` Python script in your favourite text editor.
 Copy and paste the hex values from the Arduino Serial Monitor output into the string `DUMP_STRING`. Make sure none of the old string is there, and make sure it makes a valid Python string (i.e. that it is surrounded by single quotes and is all one line.)
 
 Run the `interpreter.py` Python script. It should generate a file called `rom.bin` that is exactly 16,384 bytes long.
+
+If you know that your ROM is longer than 16,384 bytes, this board may not work for you. Please contact me immediately and we'll work something out.
+
+### Other Commands
+Not many commands are supported; this list is here for mostly diagnostic purposes.
+
+| Command | Does what? |
+|---------|------------|
+| `dump`  | Dumps a 16K ROM |
+| `info`  | Version identification for the firmware. |
+| `oelo`  | Pulls the output-enable line of the cartridge LOW (enabled) |
+| `oehi`  | Pulls the output-enable line of the cartridge HIGH (disabled) |

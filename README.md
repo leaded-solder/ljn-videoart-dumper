@@ -1,4 +1,10 @@
 # LJN Video Art cartridge dumper
+In 1987, toy company LJN made a home game console called the "[Video Art](https://en.wikipedia.org/wiki/LJN_Video_Art)." It has a handful of games that come on cartridges and is 6805-based.
+
+This repo contains the source for a hardware/software combination to dump these cartridges to ROM files, which can be used in a hypothetical future emulator or clone device.
+
+This device was developed as part of [a Leaded Solder blog](https://www.leadedsolder.com) entry. It cost money and time to develop; if you want to support things like this in the future, please contribute to the Patreon.
+
 ## Hardware
 ### Requirements
 You will need:

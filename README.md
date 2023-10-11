@@ -5,6 +5,10 @@ This repo contains the source for a hardware/software combination to dump these 
 
 This device was developed as part of [a Leaded Solder blog](https://www.leadedsolder.com) entry. It cost money and time to develop; if you want to support things like this in the future, please contribute to the Patreon.
 
+## Dumped Games
+So far, very few games have been dumped.
+ - Disney Story Book (unverified)
+
 ## Hardware
 ### Requirements
 You will need:
@@ -32,6 +36,7 @@ It is challenging to make the stacking connectors go in straight; if you have a 
  1. Install Arduino IDE. I developed this with version 2.2.1, but I assume any Arduino editor should work for this purpose.
  2. Open the `.ino` file.
  3. Connect your Arduino Uno (or compatible) to the USB port and upload the firmware to the board. This might require some configuration; check your board vendor for more details.
+ 4. Insert the cartridge. The label side of the cartridge must face outwards, towards the text on the PCB that says "label side this way."
 
 ### Usage instructions
 For now, there is no software client for this dumper. Instead, you'll want to use the Serial Monitor from the Arduino IDE.

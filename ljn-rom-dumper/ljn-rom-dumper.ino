@@ -92,7 +92,7 @@ uint8_t clockOutData() {
 
 void dumpCartridgeToSerial() {
   uint16_t address = 0;
-  while (address < 32 /*ROM_LENGTH*/) {  // HACK just for now
+  while (address < ROM_LENGTH) {  // HACK just for now
     setOutputEnable(true);  // enabled
     delayMicroseconds(50); // wait for ROM to put stuff on the wire
     assertAddressBus(address);

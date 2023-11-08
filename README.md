@@ -6,10 +6,20 @@ This repo contains the source for a hardware/software combination to dump these 
 This device was developed as part of [a Leaded Solder blog](https://www.leadedsolder.com) entry. It cost money and time to develop; if you want to support things like this in the future, please contribute to the Patreon.
 
 ## Dumped Games
-So far, very few games have been dumped.
- - Disney Story Book (unverified)
+So far, only one game has been dumped by this device:
+ - Disney Story Book
 
-If you have more cartridges that can be dumped (or even better, a Video Art system whose BIOS ROM can be desoldered and dumped!) please get in touch.
+The remaining eight games of the Video Art system have been dumped by others:
+ - Video Art Activity Cartridge `ljn_act-1`
+ - A Trip to the Zoo `tripzoo`
+ - Disney Colouring Book `disneycb`
+ - Looney Tunes `looney`
+ - Marvel Super-Heroes `marvel`
+ - My Dream Day `dreamday`
+ - My Favorite Doll `favdoll`
+ - On the Move `onmove`
+
+If you have a Video Art cartridge that is not listed here, please get in touch.
 
 ## Hardware
 ### Requirements
